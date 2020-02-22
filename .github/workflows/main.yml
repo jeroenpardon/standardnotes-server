@@ -11,12 +11,19 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-18.04
-    container:
-      image: node
-
+         
     steps:
-      - uses: actions/checkout@v1
-      - name: Install & Tests
+      - uses: actions/checkout@v2
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Build and test with Rake
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+          bundle exec rake
 
   cd:
     runs-on: ubuntu-latest
