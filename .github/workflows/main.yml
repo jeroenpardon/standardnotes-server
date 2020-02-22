@@ -10,7 +10,7 @@ on:
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    runs-on: ruby:2.6.5-slim-stretch
     container:
       image: node
 
