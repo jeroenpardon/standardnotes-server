@@ -37,3 +37,4 @@ jobs:
          name: jeroenpardon/syncing-server
          username: ${{ secrets.DOCKER_USER }}
          password: ${{ secrets.DOCKER_PASSWORD }}
+         registry: docker.pkg.github.com
