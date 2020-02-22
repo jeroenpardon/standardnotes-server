@@ -21,9 +21,7 @@ jobs:
 
       - name: Build and test with Rake
         run: |
-          gem install bundler
-          bundle install --jobs 4 --retry 3
-          bundle exec rake
+          gem install bundler && bundle install
 
   cd:
     runs-on: ubuntu-latest
